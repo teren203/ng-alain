@@ -6,9 +6,9 @@ import { Component } from '@angular/core';
 })
 export class QRComponent {
   value = 'https://ng-alain.com/';
-  background = '#ffffff';
+  background = 'white';
   backgroundAlpha = 1.0;
-  foreground = '#000000';
+  foreground = 'black';
   foregroundAlpha = 1.0;
   level = 'L';
   mime = 'image/png';

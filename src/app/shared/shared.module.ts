@@ -2,7 +2,11 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+// tslint:disable-next-line:import-blacklist
+import { DelonABCModule } from '@delon/abc';
 import { DelonACLModule } from '@delon/acl';
+// tslint:disable-next-line:import-blacklist
+import { DelonChartModule } from '@delon/chart';
 import { DelonFormModule } from '@delon/form';
 // delon
 import { AlainThemeModule } from '@delon/theme';
@@ -10,20 +14,19 @@ import { AlainThemeModule } from '@delon/theme';
 import { TranslateModule } from '@ngx-translate/core';
 
 // #region third libs
+// tslint:disable-next-line:import-blacklist
+import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { CountdownModule } from 'ngx-countdown';
 import { NgxTinymceModule } from 'ngx-tinymce';
 import { UEditorModule } from 'ngx-ueditor';
 
-const THIRDMODULES = [CountdownModule, UEditorModule, NgxTinymceModule];
+const THIRDMODULES = [NgZorroAntdModule, CountdownModule, UEditorModule, NgxTinymceModule];
 // #endregion
 
 // #region your componets & directives
 const COMPONENTS = [];
 const DIRECTIVES = [];
 // #endregion
-
-import { SHARED_DELON_MODULES } from './shared-delon.module';
-import { SHARED_ZORRO_MODULES } from './shared-zorro.module';
 
 @NgModule({
   imports: [
@@ -32,10 +35,10 @@ import { SHARED_ZORRO_MODULES } from './shared-zorro.module';
     RouterModule,
     ReactiveFormsModule,
     AlainThemeModule.forChild(),
+    DelonABCModule,
+    DelonChartModule,
     DelonACLModule,
     DelonFormModule,
-    ...SHARED_DELON_MODULES,
-    ...SHARED_ZORRO_MODULES,
     // third libs
     ...THIRDMODULES,
   ],
@@ -50,10 +53,10 @@ import { SHARED_ZORRO_MODULES } from './shared-zorro.module';
     ReactiveFormsModule,
     RouterModule,
     AlainThemeModule,
+    DelonABCModule,
+    DelonChartModule,
     DelonACLModule,
     DelonFormModule,
-    ...SHARED_DELON_MODULES,
-    ...SHARED_ZORRO_MODULES,
     // i18n
     TranslateModule,
     // third libs

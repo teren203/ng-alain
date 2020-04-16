@@ -29,10 +29,8 @@ export class ExtrasPoiComponent {
         {
           text: '编辑',
           type: 'modal',
-          modal: {
-            component: ExtrasPoiEditComponent,
-            paramsName: 'i',
-          },
+          component: ExtrasPoiEditComponent,
+          paramName: 'i',
           click: () => this.msg.info('回调，重新发起列表刷新'),
         },
         { text: '图片', click: () => this.msg.info('click photo') },

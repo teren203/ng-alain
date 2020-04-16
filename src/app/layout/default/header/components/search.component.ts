@@ -4,7 +4,13 @@ import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, HostBind
   selector: 'header-search',
   template: `
     <nz-input-group [nzAddOnBeforeIcon]="focus ? 'arrow-down' : 'search'">
-      <input nz-input [(ngModel)]="q" name="q" (focus)="qFocus()" (blur)="qBlur()" [placeholder]="'menu.search.placeholder' | translate" />
+      <input
+        nz-input
+        [(ngModel)]="q"
+        (focus)="qFocus()"
+        (blur)="qBlur()"
+        [placeholder]="'menu.search.placeholder' | translate"
+      />
     </nz-input-group>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,

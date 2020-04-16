@@ -8,14 +8,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // 参考：https://ng-alain.com/docs/i18n
 import { default as ngLang } from '@angular/common/locales/zh';
 import { DELON_LOCALE, zh_CN as delonLang } from '@delon/theme';
-import { zhCN as dateFnsLang } from 'date-fns/locale';
-import { NZ_DATE_LOCALE, NZ_I18N, zh_CN as zorroLang } from 'ng-zorro-antd/i18n';
+import { NZ_I18N, zh_CN as zorroLang } from 'ng-zorro-antd/i18n';
 const LANG = {
   abbr: 'zh',
   ng: ngLang,
   zorro: zorroLang,
   delon: delonLang,
-  dateFns: dateFnsLang,
 };
 // register angular
 import { registerLocaleData } from '@angular/common';
@@ -23,7 +21,6 @@ registerLocaleData(LANG.ng, LANG.abbr);
 const LANG_PROVIDES = [
   { provide: LOCALE_ID, useValue: LANG.abbr },
   { provide: NZ_I18N, useValue: LANG.zorro },
-  { provide: NZ_DATE_LOCALE, useValue: LANG.dateFns },
   { provide: DELON_LOCALE, useValue: LANG.delon },
 ];
 // #endregion
